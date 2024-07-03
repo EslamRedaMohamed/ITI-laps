@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/registrIcon.png" type="image/icon type">
+    <title>Registr</title>
+    <link rel="stylesheet" href="registr.css">
+</head>
+<body>
+<div>
+    <h1>Registr, Now</h1>
+    <form id="registrForm" method="get" action="login.html">
+        <label for="fullName">Full Name:</label>
+        <input type="text" id="fullName" name="fullName" placeholder="Enter your Name:" pattern=".{3,}" required><br><br>
+        <span id="error-message-fullName" class="error">Invalid name</span><br><br>
+
+
+
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+
+        <label for="city">City:</label>
+        <select id="city" name="city" required>
+            <option value="">Select City</option>
+            <option value="cairo">cairo</option>
+            <option value="helwan">helwan</option>
+            <option value="Maadi">Maadi</option>
+            <option value="Alexandria">Alexandria</option>
+            <option value="Other">Other</option>
+        </select><br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <label for="repeatPassword">Repeat Password:</label>
+        <input type="password" id="repeatPassword" name="repeatPassword" required><br><br>
+
+        <span id="error-message-password" class="error">password and repeat password should be the same!</span><br><br>
+
+
+        <label>
+            <input type="checkbox" id="terms" name="terms" required>
+            I accept the terms and conditions
+        </label><br><br>
+
+        <span id="error-message-submit" class="error">Plz correct the validation errors first.</span><br><br>
+
+
+        <button type="submit">Register</button>
+        
+
+    </form>
+</div>
+
+    <script src="registr.js"></script>
+</body>
+</html>
