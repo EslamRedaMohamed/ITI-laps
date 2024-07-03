@@ -1,4 +1,4 @@
 # ITI-laps
-##List of added courses
+## List of added courses
 
 - Clint-Side Technologies
