@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lap5</title>
+</head>
+<body>
+    Q5
+    <p id="fullName"></p>
+    <img id="image" /><br><br>
+    <button onclick="getUserData()">Retrieve Single User Data</button>
+    <hr>
+
+
+    <label for="userId">Search User By ID:</label>
+    <input type="text" id="userId"><br><br>
+    <button onclick="sereachUsersData()">Display</button>
+    <p id="idfullname"></p>
+    <img id="idimage" /><br><br>
+    <hr>
+
+
+    <h2>Users Data</h2>
+    <select id="usersList" onchange="displayUserData();" >
+        <option >Select User</option>
+    </select>
+    <p id="selectedemail"></p>
+    <img id="selectedimage"/>
+    <hr>
+
+Q6
+    <button onclick="checkValidation()">IT, valid? </button>
+
+    <script src="lap5.js"></script>
+</body>
+</html>
