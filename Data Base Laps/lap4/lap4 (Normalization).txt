@@ -1,0 +1,63 @@
+
+
+> 0nf : default 
+customers [#customer_No ,CName ,Property_No ,PAddress ,RentStart ,RentFinish ,Rent ,Owner_No ,OName]
+------------
+> 1nf {Multi values attributes - Composite attributes - Repeating Groups (Multi Values + related attributes ) }
+
+customers [#customer_No ,CName ]
+customers_Properties[#customer_No(fk) ,#Property_No ,PAddress ,RentStart ,RentFinish ,Rent ,Owner_No ,OName]
+
+
+
+-----------------------------------
+> 2nf { Partial dependency = attribute depend Partially on composite key attribute }
+
+customers [#customer_No ,CName ]
+customers_Properties [#customer_No(fk),#Property_No(fk) ,RentStart ,RentFinish ,Rent ]
+Properties [#Property_No,PAddress,Owner_No ,OName]
+
+-----------------------------------
+> 3nf{ Transitive [ Fake dependency ] :> Attribute depend on a NON PK. Key Attribute }
+
+customers [#customer_No ,CName ]
+customers_Properties [#customer_No(fk),#Property_No(fk) ,RentStart ,RentFinish ,Rent ]
+Properties [#Property_No,PAddress,Owner_No(fk)]
+Owners [#Owner_No ,OName]
+
+
+############################################################################################################
+
+> 0nf : default 
+
+Projects [#Project_num ,project_name ,Employee_num ,Employee_name ,Job_class ,CHG_hour ,Hour_Billed ,Total_charge]
+
+------------
+> 1nf {Multi values attributes - Composite attributes - Repeating Groups (Multi Values + related attributes ) }
+
+Projects [#Project_num ,project_name]
+
+projects_Employees [#Project_num(fk) ,#Employee_num ,Employee_name ,Job_class ,CHG_hour ,Hour_Billed]
+
+-----------------------------------
+> 2nf { Partial dependency = attribute depend Partially on composite key attribute }
+
+Projects [#Project_num ,project_name]
+
+projects_Employees [#Project_num(fk) ,#Employee_num(fk) ,Hour_Billed]
+
+Employees [#Employee_num ,Employee_name ,Job_class ,CHG_hour]
+
+-----------------------------------
+> 3nf{ Transitive [ Fake dependency ] :> Attribute depend on a NON PK. Key Attribute }
+
+Projects [#Project_num ,project_name]
+
+projects_Employees [#Project_num(fk) ,#Employee_num(fk) ,Hour_Billed]
+
+Employees [#Employee_num ,Employee_name ,Job_class(fk)]
+
+jobCHG [#Job_class ,CHG_hour]
+
+
+
