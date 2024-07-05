@@ -3,3 +3,4 @@
 
 - Clint-Side Technologies
 - Database
+- Linux
