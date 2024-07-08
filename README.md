@@ -4,3 +4,4 @@
 - Clint-Side Technologies
 - Database
 - Linux
+- bash
