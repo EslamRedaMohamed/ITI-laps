@@ -1,0 +1,126 @@
+# #! /usr/bin/bash
+
+echo "uncomment befor run"
+
+<< 'comment'
+
+Print full name (comment) of all users in the system.
+
+awk '
+BEGIN{FS=":"}
+{
+    print $5
+}' /etc/passwd
+
+Print login, full name (comment) and home directory of all users.( Print each line preceded by a line number)
+
+awk '
+BEGIN{FS=":"}
+{
+
+    print NR " " $1 ":" $3 ":" $6
+
+}' /etc/passwd
+
+
+Print login, uid and full name (comment) of those uid is greater than 500
+
+awk '
+BEGIN{FS=":"}
+{
+    if($3>500){
+        print $1,$3,$5
+    }
+}' /etc/passwd
+
+Print login, uid and full name (comment) of those uid is exactly 500
+
+awk '
+BEGIN{FS=":"}
+{
+    if($3==500){
+    
+        print $1 ":" $3 ":" $5
+    
+    }
+
+}' /etc/passwd
+
+Print line from 5 to 15 from /etc/passwd
+
+awk '
+{
+    if(NR>=5 && NR<=15){
+        print $0
+    }
+}' /etc/passwd
+
+Change lp to mylp
+
+awk '
+BEGIN{FS=":"}
+{
+    for(i=0;i<=7;i++){
+        if($i == "lp"){
+            $i = "mylp"
+            
+        }
+    }
+    print $0
+}' /etc/passwd
+
+Print all information about greatest uid.
+
+awk '
+BEGIN{FS=":";max=-1}
+{
+    if($3>max){
+        max=$3
+        maxRow=$0
+    }
+}END{print maxRow}' /etc/passwd
+
+Get the sum of all accounts id’s.
+
+
+awk '
+BEGIN{FS=":";sum=0}
+{
+    sum += $3
+}END{print "sum of all accounts id’s = " sum}' /etc/passwd
+
+Bonus
+Get the sum of accounts id’s that has the same group.
+
+awk '
+BEGIN{FS=":"}
+{
+    #Dynamic Array with index = Group Number
+    sumID[$4] += $3
+    
+}END{for(g in sumID)
+{
+    print "sum of accounts id’s for Group no:" g" = "sumID[g]
+}
+}' /etc/passwd
+
+comment
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
