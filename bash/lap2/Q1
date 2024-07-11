@@ -1,0 +1,4 @@
+# #! usr/bin/bash
+
+read -p "Please Enter your User Name: " userName
+echo "Welcom, ${userName}"

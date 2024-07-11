@@ -1,0 +1,14 @@
+# #!usr/bin/bash
+# Bonus
+
+if (( "$#" == 0 ));then
+    ls
+elif (( "$#" == 1 ));then
+    ls "$1"
+elif (( "$#" == 2 ));then
+    ls "$1" "$2"
+elif (( "$#" == 3 ));then
+    ls "$1" "$2" "$3"
+else
+    echo "Enter Right format"
+fi

@@ -1,0 +1,6 @@
+# #! usr/bin/bash
+
+# method 1 using export
+echo "Method 1: " ${x1}
+# method 2 pass as arg
+echo "Method 2: " $1

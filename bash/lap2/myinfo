@@ -1,0 +1,14 @@
+# #!usr/bin/bash
+# Q8 Bonus
+
+read -p "Please Enter your Login name: " login
+if id "$login";then
+
+    # full info about files and directories in his/her home directory
+    ls -la /home/$login
+    
+    #current processes status.
+    ps -u $login
+else
+    echo "user $login does not exist."
+fi

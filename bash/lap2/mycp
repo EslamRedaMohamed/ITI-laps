@@ -1,0 +1,24 @@
+# Q3
+# #! usr/bin/bash
+if (( "$#" == 2 )); then
+    sourceFile=$1
+    targetFile=$2
+
+    cp "$sourceFile" "$targetFile"
+
+    echo "Content copied from $sourceFile to $targetFile"
+elif (( "$#" == 3 )); then
+    
+    copiedFile1=$1
+    copiedFile2=$2
+    tragetFolder=$3
+
+    cp "$copiedFile1" "$copiedFile2" "$tragetFolder"
+
+    echo "files $copiedFile1 and $copiedFile2 to $tragetFolder folder"
+
+else
+    echo "correct source_file and target_file "
+fi
+
+

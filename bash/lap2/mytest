@@ -1,0 +1,21 @@
+# #!usr/bin/bash
+# Q7 Bonus
+
+if [ -f $1 ];then
+    echo "File"
+elif [ -d $1 ];then
+    echo "Directory"
+else
+    echo "neither a file nor a directory"
+fi
+
+
+if [ -r $1 ];then
+echo "readable"
+fi
+if [ -w $1 ];then
+echo "writable"
+fi
+if [ -x $1 ];then
+echo "excutable"
+fi

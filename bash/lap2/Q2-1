@@ -1,0 +1,7 @@
+# #! usr/bin/bash
+
+# for method 1
+export x1=5
+# for method 2 pass as arg
+x2=5
+./Q2-2 $x2

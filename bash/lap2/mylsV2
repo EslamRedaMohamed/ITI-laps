@@ -1,0 +1,12 @@
+# Q6
+# #! usr/bin/bash
+
+if (( "$#" == 0 ));then
+    ls
+elif (( "$#" == 1 ));then
+    ls "$1"
+elif (( "$#" == 2 ));then
+    ls "$1" "$2"
+else
+    echo "Enter Right format"
+fi
