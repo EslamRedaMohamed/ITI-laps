@@ -1,0 +1,28 @@
+# #!usr/bin/bash
+# Q6
+
+user=$(whoami)
+
+mailFile="/var/mail/$user"
+
+lastModifyTime=0
+
+while true; do
+    if [ -f "$mailFile" ]; then
+        # Get the current modification time
+        newModifyTime=$(stat -c %Y "$mailFile")
+
+        # Check if the modification time has changed
+        if [ "$newModifyTime" -ne "$lastModifyTime" ]; then
+            echo "You have new mail!"
+            # Update the last modification time to new
+            lastModifyTime=$newModifyTime
+        fi
+    else
+        echo "No mail file found for user $user."
+        exit 1
+    fi
+
+    # Wait for 10 seconds before checking again
+    sleep 10
+done

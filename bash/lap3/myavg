@@ -1,0 +1,20 @@
+# #!usr/bin/bash
+#Q10
+
+read -p "Please Enter Size of Array: " size
+
+declare -a arr
+
+for ((i=0; i < size; i++))
+do
+    read -p "Please Enter value Element of Index $i : " arr[$i]
+done
+
+total=0
+for element in "${arr[@]}"; do
+    (( total += element ))
+done
+
+avg=$((total/size))
+
+echo "Average of array elements: $avg"

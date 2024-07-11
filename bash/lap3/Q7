@@ -1,0 +1,25 @@
+# #!usr/bin/bash
+# Q7
+
+typeset –i n1
+typeset –i n2
+n1=1
+n2=1
+while test $n1 –eq $n2
+do
+    n2=$n2+1
+    print $n1
+if [ $n1 –gt $n2 ]
+then
+    break
+else
+    continue
+fi
+n1=$n1+1
+print $n2
+
+
+# The script has errors such as incorrect syntax for arithmetic operations (n2=$n2+1 should use (( n2=n2+1 )) 
+# or n2=$(( n2+1 ))),
+# incorrect use of print instead of echo.
+

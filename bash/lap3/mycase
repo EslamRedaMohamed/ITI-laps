@@ -1,0 +1,26 @@
+# #!usr/bin/bash
+# Q1
+shopt -s extglob
+
+while true
+do
+read -p "Please enter character: " char
+case $char in
+    [Ee][Xx][iI][tT])
+    break
+    ;;
+    @([A-Z]))
+    echo "Upper Case."
+    ;;
+    @([a-z]))
+    echo "Lower Case."
+    ;;
+    @([0-9]))
+    echo "Number."
+    ;;
+    *)
+    echo "Nothing"
+    ;;
+
+esac
+done

@@ -1,0 +1,11 @@
+
+# #!usr/bin/bash
+# Q11
+
+function square(){
+    ((square=$1*$1))
+    echo $square
+}
+square $1
+result=$?
+echo $result

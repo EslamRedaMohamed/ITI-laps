@@ -1,0 +1,29 @@
+# #!usr/bin/bash
+#Q2
+shopt -s extglob
+
+while true
+do
+read -p "Please enter string: " string
+case $string in
+    [Ee][Xx][iI][tT])
+    break
+    ;;
+    +([A-Z]))
+    echo "Upper Case."
+    ;;
+    +([a-z]))
+    echo "Lower Case."
+    ;;
+    +([0-9]))
+    echo "Number."
+    ;;
+    +([a-zA-Z0-9]))
+    echo "Mix.."
+    ;;
+    *)
+    echo "Nothing"
+    ;;
+
+esac
+done

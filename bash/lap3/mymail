@@ -1,0 +1,32 @@
+# #!usr/bin/bash
+# Q5
+
+
+mailTemplate="mytemplate"
+
+# Check if the mail template file exists and print contant
+if [ ! -f "$mailTemplate" ]; then
+    echo "Mail template file $mailTemplate not found!"
+    exit 1
+fi
+
+echo "Mail template content:"
+cat "$mailTemplate"
+
+# Get the list of all system users
+users=$(cut -d: -f1 /etc/passwd)
+
+subject="ITI Notification"
+
+for user in $users; do
+    # git Real users ==> id >= 1000
+    if id -u "$user" &>/dev/null && [ $(id -u "$user") -ge 1000 ]; then
+
+        mail -s "$subject" "$user" < "$mailTemplate"
+
+        echo "Email sent to $user"
+
+    fi
+done
+
+echo "All emails sent!"

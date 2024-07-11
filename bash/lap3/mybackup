@@ -1,0 +1,19 @@
+# #!usr/bin/bash
+# Q4
+
+srcDir="$HOME"
+backupDir="$HOME/backup"
+
+
+if [ ! -d "$backupDir" ]; then
+    mkdir -p "$backupDir"
+fi
+
+for file in "$srcDir"/*; do
+    if [ -f "$file" ]; then
+        cp "$file" "$backupDir"
+        echo "Backed up $file to $backupDir"
+    fi
+
+done
+echo "Backup completed!"

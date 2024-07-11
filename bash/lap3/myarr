@@ -1,0 +1,13 @@
+# #!usr/bin/bash
+#Q9
+
+read -p "Please Enter Size of Array: " size
+
+declare -a arr
+
+for ((i=0; i < size; i++))
+do
+    read -p "Please Enter value Element of Index $i : " arr[$i]
+done
+
+echo "Your array: ${arr[@]}"

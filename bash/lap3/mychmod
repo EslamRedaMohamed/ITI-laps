@@ -1,0 +1,8 @@
+# #!usr/bin/bash
+# Q3
+
+for filee in `ls ~`
+do
+chmod u+x ~/$filee
+done
+echo "give execute permission to all files and directories in my home"
