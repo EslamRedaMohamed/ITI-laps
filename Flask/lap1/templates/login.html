@@ -1,0 +1,23 @@
+{% extends 'base.html'%}
+
+{%block title%}
+Login Page
+{%endblock%}
+
+{%block content%}
+<div class="login-bg">
+    <div class="form">
+        {%with messages = get_flashed_messages()%}
+        {% for msg in messages %}
+            <p>{{msg}}</p>
+        {% endfor %}
+    {%endwith%}
+    <form action="#" method="post">
+        Username: <input type="text" name="nm">
+        Password <input type="password", name="ps">
+        <input type="submit" value="submit">
+    </form>
+    </div>
+</div>
+
+{%endblock%}
