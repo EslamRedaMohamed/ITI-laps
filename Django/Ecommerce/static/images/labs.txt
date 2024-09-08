@@ -1,0 +1,40 @@
+Lab1:
+
+- Install Python Extension Pack
+- Create a Virtual Environment
+- Create the Project (ecommerce)
+- Create an app called tracking_system
+- Include the "tracking_system" app in the installed_apps in settings.py
+- Create a form to add [order_id, order_name, username, order_status(requested, preparing, delivering, delivered)] to an excel file (csv is ok)
+  by using POST method.
+- Retrieve the data from the excel file by using GET method
+- Create the views (functions to GET and POST)
+- Add the routes to url_patterns in urls.py
+
+*********************************************************************************************
+
+Lab2:
+
+- Create an app called mart
+- Include the "mart" app in the installed_apps in settings.py using the MartConfig from apps.py.
+- Create templates directory in your project and add it to the templates list in settings.py using the os.path.join()
+- create static directory in your project and add it to settings.py using STATIC_ROOT, STATICFILES and collectstatic (in terminal)
+- Create a base.html template which has the design of your website (navbar, footer or any shared designs to be included within the whole website)
+
+Note:
+- There was an include step that I don't remember, please add it if you do.
+
+- Create the required pages (index.html, mart.html, cart.html) and extend from the base.html using the jinja or DTL syntax
+- Create a dictionary with list of products, or excel file or any source that has list of products
+- Create the required views for mart and cart
+- A form must be created in the mart.html in which you loop on the products returned from the excel file to show them and submit the chosen products be the user
+- The mart function must POST the form in query parameteres and return redirect to the cart page
+- The cart function should GET the return the parameters (products) to be shown the cart.html page
+
+Finally:
+
+Create a repo with name Django, make it public or private and send an invitation to Eg. Menna,
+create a branch for each day or with the app name and before merging to main, make a pull request to be confirmed by her,
+and when she approves, merge to the main
+
+Feel free to add all the css styles or js logic you need.

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    <title>Mart</title>
+{% endblock %}
+
+{% block content %}
+    <h1>Welcome to my Mart, {{ name }}</h1>
+    <form method="post" action="{% url 'index' %}">
+        {% csrf_token %}
+        <ul>
+            {% for product, price in products.items %}
+            <li>
+                <input type="checkbox" name="product" value="{{ product }}"> {{ product }}: {{ price }} EGP
+            </li>
+            {% endfor %}
+        </ul>
+        <button type="submit">Submit Order</button>
+    </form>
+{% endblock %}
