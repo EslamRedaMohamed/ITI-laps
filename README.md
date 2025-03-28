@@ -6,3 +6,6 @@
 - Linux
 - bash
 - Apache Web Server
+- Python
+- Flask
+- Django
